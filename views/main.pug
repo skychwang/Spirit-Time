@@ -1,0 +1,37 @@
+head
+  title BDTime
+  link(href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" type="text/css")
+  link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous")
+  script
+    include ../bower_components/angular/angular.min.js
+    include ../bower_components/jquery/dist/jquery.min.js
+
+body
+  div(class="container")
+    div(class="col-md-12")
+      br
+      div(class="panel panel-default")
+        div(class="panel-heading")
+          center
+            h5 Time
+        div(class="panel-body" ng-controller="Overview")
+          div(class="col-md-12")
+            center
+              h1 00 : 00 : 00
+            br
+      div(class="panel panel-default")
+        div(class="panel-heading")
+          center
+            h5 Actions
+        div(class="panel-body" ng-controller="Overview")
+          div(class="col-md-4")
+            center
+              button(type="button" class="btn btn-default") Default
+          div(class="col-md-4")
+            center
+              button(type="button" class="btn btn-default") Default
+          div(class="col-md-4")
+            center
+              button(type="button" class="btn btn-default") Default
+            br
+
