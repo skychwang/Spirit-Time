@@ -46,4 +46,3 @@ while True:
         start = newStart
         nightStart = start + (200 * 60)
         newStart = start + (240 * 60)
-    
