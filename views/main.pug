@@ -9,12 +9,17 @@ head
 
 body
   div(class="container")
-    div(class="col-md-12")
+    div(class="col-md-2")
+    div(class="col-md-8")
+      div(class="page-header")
+        h2 BDTime (v.pre-alpha) 
+          small made by skywang329
+      p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       br
       div(class="panel panel-default")
         div(class="panel-heading")
           center
-            h5 Time
+            h5 Current In-Game Time
         div(class="panel-body" ng-controller="Overview")
           div(class="col-md-12")
             center
@@ -22,14 +27,17 @@ body
                 h1 00 : 00
               div(id="dayNight")
                 p "Message here."
+      div(class="page-header")
+        h3 Web-App Actions
       div(class="panel panel-default")
         div(class="panel-heading")
           center
-            h5 Actions
+            h5 Notifications
         div(class="panel-body" ng-controller="Overview")
+          br
           div(class="col-md-4")
             center
-              button(type="button" class="btn btn-danger" id="notifyNight" onclick="notifyNightClick()") NIGHTTIME Start (10PM) Notification
+              button(type="button" class="btn btn-danger" id="notifyNight" onclick="notifyNightClick()") NIGHTTIME Start (10PM)
           div(class="col-md-4")
             center
               button(type="button" class="btn btn-default") Default
@@ -37,4 +45,6 @@ body
             center
               button(type="button" class="btn btn-default") Default
             br
+      p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    div(class="col-md-2")
 

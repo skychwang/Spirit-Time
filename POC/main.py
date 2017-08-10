@@ -32,14 +32,13 @@ while True:
     seconds = time.time() - start
     if time.time() < nightStart:
         message = "It is currently DAYTIME."
-        m, s = divmod(seconds, 13)
+        m, s = divmod(seconds, 0.0013)
     elif time.time() < newStart:
         message = "It is currently NIGHTTIME."
-        m, s = divmod(seconds, 5)
+        m, s = divmod(seconds, 0.0005)
     h, m = divmod(m, 60)
     h = h + 7#calibration
-    if h >= 24:#reset
-        h = 0
+    h = h % 24
     print(message)#Change this to webserver django display update
     print ("%d:%02d" % (h, m))# ^
     if time.time() > newStart:
