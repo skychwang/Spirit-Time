@@ -1,8 +1,15 @@
+document.addEventListener('DOMContentLoaded', function () {
+  if (Notification.permission !== "granted")
+    Notification.requestPermission();
+});
+
 var start = Date.now() / 1000
 var nightStart = start + (200 * 60)
 var newStart = start + (240 * 60)
 
-function reloadTime(){
+var notifyNight = false
+
+function reloadTime() {
   var now = Date.now() / 1000
   var seconds = now - start
   if (now < nightStart) {
@@ -28,6 +35,33 @@ function reloadTime(){
   }
   document.getElementById("time").innerHTML = "<h1>" + IGT + "</h1>"
   document.getElementById("dayNight").innerHTML = "<p>" + message + "</p>"
+
+  if (now > nightStart) {//Nightstart notification
+    if (notifyNight == true && nightStart != 0) {
+      var nightNotification = new Notification('NIGHTTIME HAS ARRIVED', {
+        body: 'It is now 10:00 PM.'
+      })
+    }
+    nightStart = 0
+  }
 }
 
 setInterval('reloadTime()', 1000)
+
+function notifyNightClick() {
+  if (notifyNight == false) {
+    if (!Notification) {
+      alert('Desktop notifications not available in your browser. Try Chromium.'); 
+      return;
+    }
+    if (Notification.permission !== "granted") {
+      Notification.requestPermission();
+    } else {
+      notifyNight = true
+      document.getElementById("notifyNight").className = "btn btn-success"
+    }
+  } else if (notifyNight == true) {
+    notifyNight = false
+    document.getElementById("notifyNight").className = "btn btn-danger"
+  }
+}
