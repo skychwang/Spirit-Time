@@ -9,7 +9,7 @@ var time = [1501677110]
 
 //Notification variables
 var notifyNight = false
-var notifiedNight = false
+var notifiedNight = true
 
 function clock() {
   //init and adjust
