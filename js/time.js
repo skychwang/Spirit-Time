@@ -19,7 +19,7 @@ function clock() {
       time.push(time[i-1] + 60/4.5)
     }
     for(i = 900; i < 1440; i++) {
-      time.push(time[i-1] + 5)
+      time.push(time[i-1] + 240/54)
     }
   }
 
