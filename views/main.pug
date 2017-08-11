@@ -14,7 +14,7 @@ body
       div(class="page-header")
         h2 BDTime (v.pre-alpha) 
           small made by skywang329
-      p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      p This is a web-app that will display the current time in the world of Black Desert Online. The "Calibration Point" represents the exact ending time of each week's server maintainence; this datetime, displayed below in UTC, is the first instance of 07:00 AM in-game time. All following times are calculated and displayed relative to this point in time. As each week's time at which regular maintainence ends is different, this "Calibration Point" requires weekly manual recalibration.
       br
       div(class="panel panel-default")
         div(class="panel-heading")
@@ -45,9 +45,9 @@ body
             center
               button(type="button" class="btn btn-default") Default
             br
-      p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      p Click on the above buttons to toggle desktop notifications for when the following in-game times occur. RED = OFF, GREEN = ON. When notifications are turned on, it is advised to keep the browser window open (e.g. in the background) and not kept in an non-toplevel tab as this may, depending on the browser, pause the much-needed Javascript magics required to send you these notifications. 
+      br
     div(class="col-md-2")
 
   script
     include ../js/time.js
-
