@@ -1,5 +1,5 @@
 {
-  "name": "bdtime",
+  "name": "spirittime",
   "description": "",
   "dependencies": {
     "bootstrap": "~3",
@@ -21,7 +21,7 @@
     "skywang329"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/skywang329/BDTime",
+  "homepage": "https://github.com/skywang329/Spirit-Time",
   "ignore": [
     "**/.*",
     "node_modules",

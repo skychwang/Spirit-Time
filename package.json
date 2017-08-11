@@ -1,5 +1,5 @@
 {
-  "name": "bdtime",
+  "name": "spirittime",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/skywang329/BDTime.git"
+    "url": "git+https://github.com/skywang329/Spirit-Time.git"
   },
   "author": "skywang329",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/skywang329/BDTime/issues"
+    "url": "https://github.com/skywang329/Spirit-Time/issues"
   },
-  "homepage": "https://github.com/skywang329/BDTime#readme",
+  "homepage": "https://github.com/skywang329/Spirit-Time#readme",
   "dependencies": {
     "express": "3.3.4",
     "mongodb": "1.4.9",
