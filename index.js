@@ -1,8 +1,8 @@
 var http = require('http'),
-  request = require('request'),
+	request = require('request'),
 	express = require('express'),
 	path = require('path'),
-  querystring = require("querystring");
+	querystring = require("querystring");
 
 var app = express();
 
@@ -19,6 +19,10 @@ app.get('/favicon.ico', function(req, res) {
 
 app.get('/', function(req, res) {
   res.render('main');
+});
+
+app.get('/admin', function(req, res) {
+  res.send('hi');
 });
 
 http.createServer(app).listen(app.get('port'), function(){

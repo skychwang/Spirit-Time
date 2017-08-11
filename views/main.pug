@@ -12,8 +12,9 @@ body
     div(class="col-md-2")
     div(class="col-md-8")
       div(class="page-header")
-        h2 Spirit Time (v.pre-alpha) 
-          small made by skywang329
+        a(href="https://github.com/skywang329/Spirit-Time" style="color: inherit; text-decoration: none;")
+          h2 Spirit Time (v.alpha) 
+            small made by skywang329
       p This is a web-app that will display the current time in the world of Black Desert Online. The "Calibration Point" represents the exact ending time of each week's server maintainence; this datetime, displayed below in UTC, is the first instance of 07:00 AM in-game time. All following times are calculated and displayed relative to this point in time. As each week's time at which regular maintainence ends is different, this "Calibration Point" requires weekly manual recalibration.
       br
       div(class="panel panel-default")
@@ -43,7 +44,7 @@ body
               button(type="button" class="btn btn-danger" id="notifyDay" onclick="notifyDayClick()") DAYTIME Start (7AM)
           div(class="col-md-4")
             center
-              button(type="button" class="btn btn-default") Default
+              button(type="button" class="btn btn-default") More To Come.
             br
       p Click on any of the buttons above to toggle desktop notifications for when their respective in-game times occur. RED = OFF, GREEN = ON. When notifications are turned on, it is advised to keep the browser window open (e.g. in the background) and not kept in an non-toplevel tab as this may, depending on the browser, pause the much-needed Javascript magics required to send you these notifications. 
       br
