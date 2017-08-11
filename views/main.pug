@@ -5,7 +5,7 @@ head
   script
     include ../bower_components/angular/angular.min.js
     include ../bower_components/jquery/dist/jquery.min.js
-    include ../js/time.js
+    include ../bower_components/moment/moment.js
 
 body
   div(class="container")
@@ -19,14 +19,14 @@ body
       div(class="panel panel-default")
         div(class="panel-heading")
           center
-            h5 Current In-Game Time
+            h5 Current In-Game Time (24H)
         div(class="panel-body" ng-controller="Overview")
           div(class="col-md-12")
             center
               div(id="time")
                 h1 00 : 00
-              div(id="dayNight")
-                p "Message here."
+              div(id="lastCalibrated")
+                p "lastCalibrated here."
       div(class="page-header")
         h3 Web-App Actions
       div(class="panel panel-default")
@@ -47,4 +47,7 @@ body
             br
       p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     div(class="col-md-2")
+
+  script
+    include ../js/time.js
 

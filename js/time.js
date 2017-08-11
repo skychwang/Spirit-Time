@@ -5,7 +5,11 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //set starting 7 AM in UNIX Timestamp format
-var time = [1501677110]
+var lastCalibrated = 1501677110
+var time = [lastCalibrated]
+//setting lastCalibrated to formatted version
+var lastCalibratedUTC = moment(lastCalibrated * 1000).utc().format('MMMM Do YYYY, h:mm:ss a')
+document.getElementById("lastCalibrated").innerHTML = "<p>" + "Calibration Point: " + lastCalibratedUTC + " | UTC" + "</p>"
 
 //Notification variables
 var notifyNight = false
@@ -43,8 +47,6 @@ function clock() {
 
   //nighttime
   if (mid > 900) {
-    //message nighttime
-    message = "It is currently NIGHTTIME."
     //notification for nighttime
     if (notifyNight == true && notifiedNight == false) {
       var nightNotification = new Notification('It is now NIGHTTIME in BDO.', {
@@ -52,9 +54,6 @@ function clock() {
       })
       notifiedNight = true
     }
-  } else {
-    //message daytime
-    message = "It is currently DAYTIME."
   }
   //reset nighttime notified status in 60 in-game minutes
   if (mid < 900 && notifiedNight == true) {
@@ -64,7 +63,6 @@ function clock() {
   //HTML Update
   var formattedTime = String(("0" + hour).slice(-2)) + " : " + String(("0" + minute).slice(-2))
   document.getElementById("time").innerHTML = "<h1>" + formattedTime + "</h1>"
-  document.getElementById("dayNight").innerHTML = "<p>" + message + "</p>"
 }
 
 //clock update
@@ -74,7 +72,7 @@ setInterval('clock()', 1000)
 function notifyNightClick() {
   if (notifyNight == false) {
     if (!Notification) {
-      alert('Desktop notifications not available in your browser. Try Chromium.'); 
+      alert('Desktop notifications are not available in your browser. Only Chromium browsers are supported.'); 
       return;
     }
     if (Notification.permission !== "granted") {

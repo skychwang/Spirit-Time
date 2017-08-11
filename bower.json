@@ -13,7 +13,8 @@
     "angular-bootstrap": "~0.11.2",
     "angular-ui-utils": "~0.1.1",
     "angular-ui-router": "~0.2.11",
-    "angular-chart.js": "^1.1.1"
+    "angular-chart.js": "^1.1.1",
+    "moment": "^2.18.1"
   },
   "main": "index.js",
   "authors": [
