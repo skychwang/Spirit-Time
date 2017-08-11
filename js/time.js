@@ -14,6 +14,8 @@ document.getElementById("lastCalibrated").innerHTML = "<p>" + "Calibration Point
 //Notification variables
 var notifyNight = false
 var notifiedNight = true
+var notifyDay = false
+var notifiedDay = true
 
 function clock() {
   //init and adjust
@@ -45,19 +47,32 @@ function clock() {
   minute = minute % 60
   hour = (hour + 7) % 24
 
-  //nighttime
+  //nightday
   if (mid > 900) {
+    //nighttime
     //notification for nighttime
     if (notifyNight == true && notifiedNight == false) {
       var nightNotification = new Notification('It is now NIGHTTIME in BDO.', {
-        body: 'NightVendor has opened.'
+        body: 'Patrigo the Night Vendor has opened shop | Extra monster AP&XP'
       })
       notifiedNight = true
     }
+  } else {
+    //daytime
+    //notification for daytime
+    if (notifyDay == true && notifiedDay == false) {
+      var dayNotification = new Notification('It is now DAYTIME in BDO.', {
+        body: 'Enjoy the sun.'
+      })
+      notifiedDay = true
+    }
   }
-  //reset nighttime notified status in 60 in-game minutes
+  //reset nighttime notified status
   if (mid < 900 && notifiedNight == true) {
     notifiedNight = false
+  }
+  if (mid > 900 && notifiedDay == true) {
+    notifiedDay = false
   }
 
   //HTML Update
@@ -68,6 +83,7 @@ function clock() {
 //clock update
 setInterval('clock()', 1000)
 
+//notification buttons
 //notify night button
 function notifyNightClick() {
   if (notifyNight == false) {
@@ -84,5 +100,23 @@ function notifyNightClick() {
   } else if (notifyNight == true) {
     notifyNight = false
     document.getElementById("notifyNight").className = "btn btn-danger"
+  }
+}
+//notify day button
+function notifyDayClick() {
+  if (notifyDay == false) {
+    if (!Notification) {
+      alert('Desktop notifications are not available in your browser. Only Chromium browsers are supported.'); 
+      return;
+    }
+    if (Notification.permission !== "granted") {
+      Notification.requestPermission();
+    } else {
+      notifyDay = true
+      document.getElementById("notifyDay").className = "btn btn-success"
+    }
+  } else if (notifyDay == true) {
+    notifyDay = false
+    document.getElementById("notifyDay").className = "btn btn-danger"
   }
 }
